@@ -1,0 +1,343 @@
+@charset "utf-8";
+
+@font-face {
+  /*フォントの名前*/
+  font-family: "makinas";
+  /*フォントファイルへのパス（複数指定の場合、上から順に読み込まれる）*/
+  src: url("../assets/font/makinas.woff2") format("woff2"),
+       url("../assets/font/makinas.woff") format("woff");
+}
+
+body{
+font-family: 'makinas', sans-serif;
+line-height:1.5;
+}
+
+_:-ms-lang(x)::-ms-backdrop, body{/*IE11用ハック*/
+    overflow-x: hidden;
+
+}
+
+.timeline-Widget {
+  padding: 20px;
+  background-size: auto auto;
+  background-color: #3c3c3c;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #323232 10px, #323232 20px)
+}
+.timeline-TweetList-tweet {
+  color: #fff
+}
+.SandboxRoot.env-bp-660 .timeline-Header-byline, .SandboxRoot.env-bp-660 .timeline-Header-subtitle, .SandboxRoot.env-bp-820 .timeline-Header-byline, .SandboxRoot.env-bp-820 .timeline-Header-subtitle, .SandboxRoot.env-bp-970 .timeline-Header-byline, .SandboxRoot.env-bp-970 .timeline-Header-subtitle {
+  color: #fff !important
+}
+.timeline-Header-title {
+  color: #fff !important;
+  font-size: 20px !important
+}
+.timeline-Header-title a {
+  color: #fff !important
+}
+.timeline-Tweet {
+  transition: background-color .3s
+}
+.timeline-Tweet:hover {
+  background-color: rgba(0, 0, 0, .2)
+}
+.TwitterCard-container--clickable:hover {
+  background-color: rgba(0, 0, 0, .2)
+}
+
+#wrapper{
+/*描画されるテキストを中央寄せにする*/
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#particle{
+    width:100%;
+	height: 100vh;
+	vertical-align: bottom;/*canvasタグ下に余白が生まれるのを防ぐ*/
+}
+
+
+body{
+	animation: bgchange 30s ease infinite;/*変化の時間を変更したい場合は20sの部分を好きな時間に変更*/
+}
+
+@keyframes bgchange{
+        0%   {background:#daca0b;}/*変化させたい色*/
+       10%  {background:#8bda0b;}/*変化させたい色*/
+       20%  {background:#18da0b;}/*変化させたい色*/
+       30%  {background:#0bdaaa;}/*変化させたい色*/
+       40%  {background:#0ba1da;}/*変化させたい色*/
+       50% {background:#0b38da;}/*変化させたい色*/
+       60% {background:#810bda;}/*変化させたい色*/
+       70% {background:#da0b9a;}/*変化させたい色*/
+       80% {background:#da0b4e;}/*変化させたい色*/
+       90% {background:#da6a0b;}/*変化させたい色*/
+       100%{background:#daca0b;}
+ }
+
+ html { scroll-behavior: smooth;}
+
+ .flex{
+   display: flex;
+   padding: 2.5% 0;
+   flex-direction: row;
+   justify-content: center;
+   justify-content: space-around;
+   align-items: center;
+   background:#333;
+   flex-wrap:nowrap;
+ }
+
+.about{
+  vertical-align: middle;
+  text-align: center;
+  background-color: dodgerblue;
+  background:#333;
+  color:#fff;
+  padding: 2.5% ;
+}
+
+table{
+  padding: 50px;
+  color: #fff;
+  border-collapse: collapse
+}
+
+table#about-table{
+  font-family: 'makinas', sans-serif;
+  line-height:1.5;
+  font-weight: lighter;
+  border-collapse: collapse;
+
+}
+
+table tr#border , table th#boder {
+  border: solid 1px black;
+  padding: 20px;
+  font-weight: lighter;
+
+}
+.table{
+  width: 90%;
+  text-align: center;
+  color: #000;
+  }
+
+.recipes{
+  vertical-align: middle;
+  text-align: center;
+  background-color: dodgerblue;
+  background:#333;
+  color:#fff;
+  padding: 2.5% ;
+  line-height: 30px;
+
+}
+
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+	overflow: hidden;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+   	border: 2px solid #555;/* ボーダーの色と太さ */
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+	position: relative;
+	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+	color:#fff;
+}
+
+.btn:hover span{
+	color:#000;
+}
+
+/*== 背景が流れる（上から下） */
+.bgtop:before {
+ 	content: '';
+    /*絶対配置で位置を指定*/
+ 	position: absolute;
+ 	top:0;
+ 	left: 0;
+ 	z-index: 2;
+    /*色や形状*/
+ 	background:  #fff;/*背景色*/
+ 	width: 100%;
+	height: 0;
+    /*アニメーション*/
+ 	transition:.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+}
+
+/*hoverした際の形状*/
+.bgtop:hover:before{
+	 height: 100%;
+ 	 background-color: #fffs;
+}
+
+a#about{
+  text-align: center;
+}
+
+.shousai{
+  text-align: center;
+}
+.shousaif{
+  display: flex;
+  padding: 2.5% 0;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background:#333;
+  flex-wrap:nowrap;
+}
+
+#recipes{
+  color: #fff;
+}
+
+
+#construction{
+  width: 40%;
+  text-align: center;
+}
+
+/*== ボタン共通設定 */
+.btn02 {
+    /*背景の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+    display: inline-block;
+    width:100%;
+    max-width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    outline: none;
+    margin: 2;
+}
+
+/*ボタン内側の設定*/
+.btn02 span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    /* 重なりを3Dで表示 */
+    transform-style: preserve-3d;
+    /* アニメーションの設定 数字が少なくなるほど早く回転 */
+    transition: 0.5s;
+}
+
+/*== くるっと回転（奥に） */
+
+/* 回転前 */
+.rotateback span:nth-child(1) {
+    background: #333;
+    color: #fff;
+    transform: rotateX(0deg);/*はじめは回転なし*/
+    transform-origin: 0 50%  -25px;/* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(1) {
+    transform: rotateX(90deg);/* X軸に90度回転 */
+}
+
+/* 回転後 */
+.rotateback span:nth-child(2) {
+  /*  background: #000;*/
+    color: #000;
+    transform: rotateX(-90deg);/*はじめはX軸に-90度回転*/
+    transform-origin: 0 50%  -25px;/* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(2) {
+    transform: rotateX(0deg);/* X軸に0度回転 */
+}
+
+#botan{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+
+
+/*リンクの形状*/
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background:#38a5aa;
+	border-radius: 5px;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size:0.6rem;
+	transition:all 0.3s;
+}
+
+#page-top a:hover{
+	background: #1e5a5d;
+}
+
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 10px;
+	bottom:10px;
+	z-index: 2;
+    はじめは非表示
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
+}
